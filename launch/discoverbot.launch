@@ -54,5 +54,11 @@
   <include file="$(find discoverbot_moveit_config)/launch/default_warehouse_db.launch" if="$(arg db)">
     <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
   </include>
+  
+  <!--Start Leap Motion Node-->
+  <include file="$(find leap_motion)/launch/sensor_sender.launch"/>
+
+  <!--Start IKSolver node-->
+  <node pkg="iksolver" type="iksolver" name="discoverbot_ik" />
 
 </launch>

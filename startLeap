@@ -1,0 +1,10 @@
+#!/bin/bash
+
+gnome-terminal -x sh -c "roslaunch iksolver discoverbot.launch"
+while :
+do 
+    if ! pgrep -x "leapd" > /dev/null
+    then
+        sudo leapd
+    fi    
+done
